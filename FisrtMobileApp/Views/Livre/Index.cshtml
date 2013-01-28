@@ -1,0 +1,41 @@
+﻿@model IEnumerable<FirstMobileApp.Models.LivreModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Titre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Auteur)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Editeur)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Auteur)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Editeur)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Commander", "Commander", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

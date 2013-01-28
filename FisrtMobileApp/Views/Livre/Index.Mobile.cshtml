@@ -1,0 +1,20 @@
+﻿@model IEnumerable<FirstMobileApp.Models.LivreModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Version mobile de ma page</h2>
+
+<ul data-role="listview" data-inset="true" data-filter="true"> 
+@foreach (var item in Model) {
+     <li>
+           
+           <a href="@Url.Action("Details", new { item.Id })">
+            @Html.DisplayFor(modelItem => item.Titre) 
+          </a>  
+    </li>
+      
+}
+</ul>
+
